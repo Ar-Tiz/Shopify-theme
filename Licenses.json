@@ -1,0 +1,21 @@
+{
+  "__comment": "Digitaneo - License ",
+  
+  "active_licenses": [
+    "cardio-life-style-iq.myshopify.com",
+    "cardio-life-styles.myshopify.com",
+    "cx5izq-xf.myshopify.com"
+  ],
+
+  "restricted_access": [
+    "stolen-artiz.myshopify.com",
+    "hacker-test-site.com"
+  ],
+
+  "settings": {
+    "global_alert": false,
+    "redirect_url": "https://digitaneo.com/pages/license-required",
+    "alert_message": "عذراً، هذا المتجر يستخدم نسخة غير مرخصة من قالبنا. يرجى التواصل مع Digitaneo.",
+    "dev_mode_logs": true
+  }
+}
