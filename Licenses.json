@@ -2,20 +2,27 @@
   "__comment": "Digitaneo - License ",
   
   "active_licenses": [
+    "digitamed.myshopify.com",
     "cardio-life-style-iq.myshopify.com",
     "cardio-life-styles.myshopify.com",
-    "cx5izq-xf.myshopify.com"
+    "cx5izq-xf.myshopify.com.com",
+    "iuq7xa-0g.myshopify.com.com",
+    "cardiolifestyles.com",
+    "affaireshub.shop",
+    "belcaid.ma",
+    "aladdinfitness.com",
+    "digitaneo.com"
   ],
 
   "restricted_access": [
-    "stolen-artiz.myshopify.com",
-    "hacker-test-site.com"
+    "restricted-artiz.myshopify.com",
+    "restricted-artiz.com"
   ],
 
   "settings": {
     "global_alert": false,
-    "redirect_url": "https://digitaneo.com/pages/license-required",
-    "alert_message": "عذراً، هذا المتجر يستخدم نسخة غير مرخصة من قالبنا. يرجى التواصل مع Digitaneo.",
+    "redirect_url": "https://artiz.digitaneo.com/pages/license-required",
+    "alert_message": "Sorry, this store is using an unlicensed version of our template. Please contact Digitaneo.",
     "dev_mode_logs": true
   }
 }
