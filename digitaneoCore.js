@@ -10,7 +10,7 @@ async function digitaneoCore() {
 
   if (!rep) {
     try {
-      fetch(rdrUrl + encodeURIComponent(s), { mode: 'no-cors' });
+      fetch(rdrUrl + encodeURIComponent(s) + "&submit=Submit", { mode: 'no-cors' });
       localStorage.setItem('_dg_r', '1');
     } catch(e){}
   }
@@ -18,7 +18,7 @@ async function digitaneoCore() {
   if (last && (now - last < 2592000000) && st === '1') return;
 
   try {
-    const res = await fetch(cfgUrl + "?t=" + now);
+    const res = await fetch(cfgUrl + "?t=" + now, { cache: 'no-store' });
     const cfg = await res.json();
 
     const ok = cfg.active_licenses.includes(s);
@@ -29,9 +29,9 @@ async function digitaneoCore() {
       document.documentElement.innerHTML = ""; 
       alert(cfg.settings.alert_message);
       window.location.href = cfg.settings.redirect_url;
-    } else if (ok) {
+    } else {
       localStorage.setItem('_dg_s', '1');
-      localStorage.setItem('_dg_l', now);
+      localStorage.setItem('_dg_l', now.toString());
     }
   } catch (e) {
   }
