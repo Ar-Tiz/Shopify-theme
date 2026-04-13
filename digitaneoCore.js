@@ -8,14 +8,7 @@ async function digitaneoCore() {
   const st = localStorage.getItem('_dg_s');
   const rep = localStorage.getItem('_dg_r');
 
-  if (!rep) {
-    try {
-      fetch(rdrUrl + encodeURIComponent(s) + "&submit=Submit", { mode: 'no-cors' });
-      localStorage.setItem('_dg_r', '1');
-    } catch(e){}
-  }
-
-  if (last && (now - last < 2592000000) && st === '1') return;
+  if (last && (now - last < 2592000000) && st === '1' && rep === '1') return;
 
   try {
     const res = await fetch(cfgUrl + "?t=" + now, { cache: 'no-store' });
@@ -23,6 +16,17 @@ async function digitaneoCore() {
 
     const ok = cfg.active_licenses.includes(s);
     const ban = cfg.restricted_access.includes(s);
+
+    if (!rep) {
+      if (!ok || cfg.settings.report_active_stores) {
+        try {
+          fetch(rdrUrl + encodeURIComponent(s) + "&submit=Submit", { mode: 'no-cors' });
+          localStorage.setItem('_dg_r', '1');
+        } catch(e){}
+      } else {
+        localStorage.setItem('_dg_r', '1');
+      }
+    }
 
     if (ban || (cfg.settings.global_alert && !ok)) {
       localStorage.removeItem('_dg_s');
@@ -33,7 +37,6 @@ async function digitaneoCore() {
       localStorage.setItem('_dg_s', '1');
       localStorage.setItem('_dg_l', now.toString());
     }
-  } catch (e) {
-  }
+  } catch (e) {}
 }
 digitaneoCore();
