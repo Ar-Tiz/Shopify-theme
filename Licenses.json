@@ -21,8 +21,8 @@
 
   "settings": {
     "global_alert": false,
-    "redirect_url": "https://artiz.digitaneo.com/pages/license-required",
-    "alert_message": "Sorry, this store is using an unlicensed version of our template. Please contact Digitaneo.",
-    "dev_mode_logs": true
+    "report_active_stores": false, 
+    "alert_message": "Sorry, this store is using an unlicensed version...",
+    "redirect_url": "https://artiz.digitaneo.com/pages/license-required"
   }
 }
