@@ -1,0 +1,13 @@
+{
+  "active_licenses": [
+    "digitamed.myshopify.com",
+    "..."
+  ],
+  "restricted_access": [],
+  "settings": {
+    "global_alert": false,
+    "report_active_stores": false, 
+    "alert_message": "Sorry, this store is using an unlicensed version...",
+    "redirect_url": "https://artiz.digitaneo.com/pages/license-required"
+  }
+}
