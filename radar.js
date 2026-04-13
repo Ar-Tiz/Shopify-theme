@@ -10,7 +10,7 @@
             <h1 style="font-size:50px;">⚠️</h1>
             <h2>System Integrity Error</h2>
             <p>Essential core files are missing. Please reinstall the original Artiz Theme or contact Digitaneo support.</p>
-            <a href="https://digitaneo.com" style="color:#00ffcc; text-decoration:none; border:1px solid #00ffcc; padding:10px 20px; margin-top:20px;">Contact Support</a>
+            <a href="https://artiz.digitaneo.com/pages/license-required" style="color:#00ffcc; text-decoration:none; border:1px solid #00ffcc; padding:10px 20px; margin-top:20px;">Contact Support</a>
           </div>`;
         
         // 2. إيقاف أي عمليات أخرى
