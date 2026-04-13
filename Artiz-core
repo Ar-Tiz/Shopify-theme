@@ -1,9 +1,24 @@
 {
+  "__comment": "Digitaneo - License ",
+  
   "active_licenses": [
     "digitamed.myshopify.com",
-    "..."
+    "cardio-life-style-iq.myshopify.com",
+    "cardio-life-styles.myshopify.com",
+    "cx5izq-xf.myshopify.com",
+    "iuq7xa-0g.myshopify.com",
+    "cardiolifestyles.com",
+    "affaireshub.shop",
+    "belcaid.ma",
+    "aladdinfitness.com",
+    "digitaneo.com"
   ],
-  "restricted_access": [],
+
+  "restricted_access": [
+    "restricted-artiz.myshopify.com",
+    "restricted-artiz.com"
+  ],
+
   "settings": {
     "global_alert": false,
     "report_active_stores": false, 
