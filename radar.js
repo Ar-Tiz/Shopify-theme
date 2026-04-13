@@ -1,4 +1,4 @@
-
+/**
  * Artiz Theme – Header Logic & Integrity
  * Developer: Digitaneo
  */
