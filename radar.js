@@ -1,27 +1,33 @@
-<script>
-  // وظيفة التحقق من وجود الحماية
-  (function() {
-    function checkSecurity() {
-      // نتحقق هل الدالة المشفرة القادمة من GitHub موجودة؟
-      if (typeof digitaneoCore !== 'function') {
-        // 1. مسح محتوى المتجر بالكامل
-        document.body.innerHTML = `
-          <div style="height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#000; color:#fff; font-family:sans-serif; text-align:center; padding:20px;">
-            <h1 style="font-size:50px;">⚠️</h1>
-            <h2>System Integrity Error</h2>
-            <p>Essential core files are missing. Please reinstall the original Artiz Theme or contact Digitaneo support.</p>
-            <a href="https://artiz.digitaneo.com/pages/license-required" style="color:#00ffcc; text-decoration:none; border:1px solid #00ffcc; padding:10px 20px; margin-top:20px;">Contact Support</a>
-          </div>`;
-        
-        // 2. إيقاف أي عمليات أخرى
-        window.stop(); 
-      }
-    }
 
-    // الفحص الأول عند التحميل
-    window.addEventListener('load', checkSecurity);
-    
-    // الفحص الثاني بعد 5 ثوانٍ (للإحتياط من أي محاولة تعطيل متأخرة)
-    setTimeout(checkSecurity, 5000);
-  })();
-</script>
+ * Artiz Theme – Header Logic & Integrity
+ * Developer: Digitaneo
+ */
+(function () {
+  'use strict';
+
+  function checkSystemIntegrity() {
+    if (typeof digitaneoCore !== 'function') {
+      document.documentElement.innerHTML = `
+        <html>
+          <head><title>System Integrity Error</title><meta name="viewport" content="width=device-width, initial-scale=1"></head>
+          <body style="margin:0; background:#000; color:#fff; font-family:sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; text-align:center; overflow:hidden;">
+            <div style="padding:20px; max-width:500px;">
+              <div style="font-size:80px; margin-bottom:20px;">⚠️</div>
+              <h1 style="font-size:24px; text-transform:uppercase;">System Integrity Error</h1>
+              <p style="color:#ccc; line-height:1.6; margin-bottom:30px;">Essential core files are missing. Please reinstall the original Artiz Theme or contact Digitaneo support.</p>
+              <a href="https://digitaneo.com" style="display:inline-block; color:#00ffcc; border:1px solid #00ffcc; padding:12px 30px; text-decoration:none; font-weight:bold;">CONTACT SUPPORT</a>
+            </div>
+          </body>
+        </html>`;
+      window.stop();
+      throw new Error("Security Check Failed.");
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(checkSystemIntegrity, 200); 
+
+/**
+ * var header = document.getElementById('artiz-header');
+ * if (!header) return;
+ */
